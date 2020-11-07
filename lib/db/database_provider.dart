@@ -5,7 +5,7 @@ import 'package:sqflite/sqlite_api.dart';
 
 
 class DatabaseProvider {
-  static const String TABLE_FOOD = "word";
+  static const String TABLE_WORD = "word";
   static const String COLUMN_ID = "id";
   static const String COLUMN_NAME = "name";
 
@@ -37,7 +37,7 @@ class DatabaseProvider {
         print("Creating word table");
 
         await database.execute(
-          "CREATE TABLE $TABLE_FOOD ("
+          "CREATE TABLE $TABLE_WORD ("
               "$COLUMN_ID INTEGER PRIMARY KEY,"
               "$COLUMN_NAME TEXT"
               ")",
@@ -50,7 +50,7 @@ class DatabaseProvider {
     final db = await database;
 
     var words = await db
-        .query(TABLE_FOOD, columns: [COLUMN_ID, COLUMN_NAME]);
+        .query(TABLE_WORD, columns: [COLUMN_ID, COLUMN_NAME]);
 
     List<Word> wordList = List<Word>();
 
@@ -65,7 +65,7 @@ class DatabaseProvider {
 
   Future<Word> insert(Word word) async {
     final db = await database;
-    word.id = await db.insert(TABLE_FOOD, word.toMap());
+    word.id = await db.insert(TABLE_WORD, word.toMap());
     return word;
   }
 
@@ -73,7 +73,7 @@ class DatabaseProvider {
     final db = await database;
 
     return await db.delete(
-      TABLE_FOOD,
+      TABLE_WORD,
       where: "id = ?",
       whereArgs: [id],
     );
@@ -83,7 +83,7 @@ class DatabaseProvider {
     final db = await database;
 
     return await db.update(
-      TABLE_FOOD,
+      TABLE_WORD,
       word.toMap(),
       where: "id = ?",
       whereArgs: [word.id],

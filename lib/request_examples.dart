@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'dart:async';
-import 'package:words/ui/main.dart';
+
 
 Future<dynamic> fetchExamples(String word) async {
 

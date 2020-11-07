@@ -29,7 +29,7 @@ class _ProgressState extends State<Progress> {
     await prefs.setInt('startupNumber', currentStartupNumber);
 
     setState(() => progressCounter =
-    'You are using this app for ${currentStartupNumber}th time! Keep learning more!');
+    'You are using this app for the $currentStartupNumber time! Keep learning more!');
   }
 
   @override
