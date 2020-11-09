@@ -7,7 +7,7 @@ Future<dynamic> fetchDefinition(String word) async {
   Map<String, String> requestHeaders = {
     'Accept': 'application/json',
     'x-rapidapi-host' : 'wordsapiv1.p.rapidapi.com',
-    'x-rapidapi-key': 'fa1c05273fmshf909e1f944fc61dp11ef7djsn36eafab12b7b',
+    'x-rapidapi-key': '',
 
   };
 

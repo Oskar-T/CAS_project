@@ -24,7 +24,7 @@ class _ProgressState extends State<Progress> {
     final prefs = await SharedPreferences.getInstance();
 
     int lastStartupNumber = await _getIntFromSharedPref();
-    int currentStartupNumber = ++lastStartupNumber;
+    int currentStartupNumber = lastStartupNumber++;
 
     await prefs.setInt('startupNumber', currentStartupNumber);
 
